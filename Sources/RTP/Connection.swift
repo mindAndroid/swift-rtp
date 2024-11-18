@@ -39,6 +39,11 @@
 			conn.send(content: data, completion: .contentProcessed(contentProcessed))
 		}
 
+		public func sendKeepAlive(data: Data) {
+			
+			conn.send(content: data, completion: .contentProcessed(contentProcessed))
+		}
+
 		func contentProcessed(error: NWError?) {
 			if let error = error {
 				print("Error sending UDP packet: \(error)")
